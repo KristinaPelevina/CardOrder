@@ -64,7 +64,7 @@ public class CardApplicationTest {
             form.$(cssSelector("[data-test-id=phone] input")).sendKeys("+79061975882");
             form.$(cssSelector("[data-test-id=agreement]")).click();
             form.$(cssSelector("[type='button']")).click();
-            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Поле обязательно для заполнения"));
+            $("[data-test-id=name].input_invalid .input__sub").shouldHave(Condition.exactText("Поле обязательно для заполнения"));
         }
 
         @Test
@@ -99,7 +99,7 @@ public class CardApplicationTest {
             form.$(cssSelector("[type='tel']")).sendKeys("+7906197588");
             form.$(cssSelector("[data-test-id=agreement]")).click();
             form.$(cssSelector("[type='button']")).click();
-            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79008007060."));
+            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
         }
 
         @Test
@@ -108,7 +108,7 @@ public class CardApplicationTest {
             form.$(cssSelector("[type='tel']")).sendKeys("+790619758882");
             form.$(cssSelector("[data-test-id=agreement]")).click();
             form.$(cssSelector("[type='button']")).click();
-            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79008007060."));
+            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
         }
 
         @Test
@@ -126,7 +126,7 @@ public class CardApplicationTest {
             form.$(cssSelector("[type='tel']")).sendKeys("+++++");
             form.$(cssSelector("[data-test-id=agreement]")).click();
             form.$(cssSelector("[type='button']")).click();
-            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79008007060."));
+            $("[data-test-id=phone].input_invalid .input__sub").shouldHave(Condition.exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
         }
     }
 }
